@@ -151,3 +151,25 @@ console.log(output12);
 // ===========================================================
 // ===========================================================
 //EXAMPLE 13
+let beginingStr = "Timmy can be found.";
+let firstRegex = /^Timmy/;
+let output13 = beginingStr.match(firstRegex);
+console.log(output13);
+//output13 will return an array with a single element string "Timmy"
+let notAnchoredStr = "You can't find Timmy now.";
+let notFirstRegex = /^Timmy/;
+let notEndRegex = /Timmy$/;
+output13 = notAnchoredStr.match(notFirstRegex);
+console.log(output13);
+//output13 will return null
+output13 = notAnchoredStr.match(notEndRegex);
+console.log(output13);
+//output13 will return null
+let endStr = "You can now find Timmy";
+let endRegex = /Timmy$/;
+output13 = endStr.match(endRegex);
+console.log(output13);
+//output13 will return an array with a single element string "Timmy"
+// ===========================================================
+// ===========================================================
+//EXAMPLE 14

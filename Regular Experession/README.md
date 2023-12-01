@@ -55,3 +55,9 @@ another type of quantifier is the _ character, this character is similar to the 
 ------Find Characters with Lazy Matching-------
 Quantifiers by defaulr are greedy, i.e they try to match every possible characters, in regular expression we call this a greedy match. The alternative is called a lazy match, which finds the smallest possible part of the string that satisfies the regex pattern. we can use the ? character to change the default greediness of quantifiers to lazy matching.
 ---EXAMPLE 12 (in regex.js file )
+
+------Match Patterns at the Beginning AND End of String-------
+Anchors are metacharacters that match the start and end of a line of the target text. we use them to assert where a boundary should be.
+The two characters used are (^) and ($).
+Befor Now, we used the caret character (^) inside a character set to create a negated character set in the form ([^...]). Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+---EXAMPLE 13 (in regex.js file )
