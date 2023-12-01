@@ -132,3 +132,22 @@ console.log(output11);
 // ===========================================================
 // ===========================================================
 //EXAMPLE 12
+let greedyStr = "titanic";
+let Regex12 = /t[a-z]*i/;
+let output12 = greedyStr.match(Regex12);
+console.log(output12);
+//the above shows greedy matching of the quantifier
+//output12 will return an array with 1 element string "titani"
+let lazyStr = "titanic";
+Regex12 = /t[a-z]*?i/;
+output12 = greedyStr.match(Regex12);
+console.log(output12);
+//the above shows lazy matching of the quantifier
+//output12 will return an array with 1 element string "ti"
+// let text = "<h1>Winter is coming</h1>";
+// let myRegex = /<.*>/; // Change this line
+// let result = text.match(myRegex);
+// console.log(result);
+// ===========================================================
+// ===========================================================
+//EXAMPLE 13

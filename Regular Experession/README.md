@@ -49,4 +49,9 @@ sometimes we want to match characters thats occurs more than one time and this c
 ---EXAMPLE 10 (in regex.js file )
 
 ------Match Characters that Occur Zero or More Times-------
-another type od quantifier is the _ character, this character is similar to the (+) character but with a slight difference. When we append (_) to a character, it means we want to match any number of that character including none.
+another type of quantifier is the _ character, this character is similar to the (+) character but with a slight difference. When we append (_) to a character, it means we want to match any number of that character including none.
+---EXAMPLE 11 (in regex.js file )
+
+------Find Characters with Lazy Matching-------
+Quantifiers by defaulr are greedy, i.e they try to match every possible characters, in regular expression we call this a greedy match. The alternative is called a lazy match, which finds the smallest possible part of the string that satisfies the regex pattern. we can use the ? character to change the default greediness of quantifiers to lazy matching.
+---EXAMPLE 12 (in regex.js file )
