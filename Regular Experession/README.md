@@ -61,3 +61,49 @@ Anchors are metacharacters that match the start and end of a line of the target 
 The two characters used are (^) and ($).
 Befor Now, we used the caret character (^) inside a character set to create a negated character set in the form ([^...]). Outside of a character set, the caret is used to search for patterns at the beginning of strings.
 ---EXAMPLE 13 (in regex.js file )
+
+------Match All Letters and Numbers-------
+Before now, we've learnt that we can match all the letters of the alphabet and number using a range in the character class like so [a-Z0-9], but this method can be replaced with a shortcut, although it includes a few extra characters as well. The closest character class in JavaScript to match the alphabet is (\w). This shortcut is equal to [A-Za-z0-9_]. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character.
+---EXAMPLE 14 (in regex.js file )
+
+------Match Everything But Letters and Numbers-------
+we can also match everything in a target text excpect the alphanumerics and underscore using a shorthand (\W), Note the difference is the lettercase. (\W) is the shorthand for [^A-Za-z0-9_]. this means we can search for the opposite of the (\w) with (\W).
+---EXAMPLE 15 (in regex.js file )
+
+------Match All Numbers and Non Numbers-------
+Another shortcut we can learn about allows us to match all the numbers in a target text 1.e instead of using the character class like so [0-9], we can use the shorthand (\d). We can also match all non digit or numbers in the target text by using the uppercase D like so (\D) which is the shorthand for [^0-9]
+---EXAMPLE 16 (in regex.js file )
+
+------EXERCISE 1-------
+-----Restrict Possible Usernames
+Usernames are used everywhere on the internet. They are what give users a unique identity on their favorite sites.
+You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
+
+--Usernames can only use alphanumeric characters.
+
+--The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+
+--Username letters can be lowercase and uppercase.
+
+--Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
+---EXERCISE 1 SOLUTION (in regex.js file )
+
+------Match Whitespace-------
+Before now, we have covered matching letters of the alphabet and numbers. we can also match the whitespace or spaces between letters.
+we can search for whitespace using (\s), which is a lowercase s. This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters. we can think of it as similar to the character class [ \r\t\f\n\v]. we can also search for non-whitespace using \S, which is an uppercase s. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class [^ \r\t\f\n\v].
+---EXAMPLE 17 (in regex.js file )
+
+------Specify Upper and Lower Number of Matches-------
+Before now, we have used the Quantifiers + and asterik character to look for one or more of the caharacter and none or more of the character respectively, which is a convienient way, but sometimes we want to match a certain range of patterns, this can be done by the interval quantifier {N,M}. This is used to specify a range for the minimum and maximum possible match. For example /\d{3, 6}/ means match a minimum of 3 and a maximum of 6 consecutive digits.
+---EXAMPLE 18 (in regex.js file )
+
+------Specify Only the Lower Number of Matches or Exact number of matches-------
+we can also specify only the lower range. For example /\d{3, }/ means match a minimum of 3 and more consequtive digits. sometimes we want to specify the exact number of matches we want, {N}, when appended to a character or character class, specifies how many of the character we want. For example /\d{3}/ means match three consecutive digits
+---EXAMPLE 19 (in regex.js file )
+
+------Check for All or None-------
+Sometimes the patterns we want to search for may have parts of it that may or may not exist. However, it may be important to check for them nonetheless.
+We can specify the possible existence of an element with a question mark, ?. This checks for zero or one of the preceding element. We can think of this symbol as saying the previous element is optional.
+For example, there are slight differences in American and British English and we can use the question mark to match both spellings.
+---EXAMPLE 20 (in regex.js file )

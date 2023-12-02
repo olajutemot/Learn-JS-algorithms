@@ -173,3 +173,104 @@ console.log(output13);
 // ===========================================================
 // ===========================================================
 //EXAMPLE 14
+let sampleStr = "The five boxing wizards jump quickly.";
+let Regex14 = /\w/g;
+let output14 = sampleStr.match(Regex14);
+console.log(output14);
+//output14 will return an array of 31 element with strings of each character apart from the period .
+// ===========================================================
+// ===========================================================
+//EXAMPLE 15
+sampleStr = "The five boxing wizards jump quickly.";
+let Regex15 = /\W/g;
+let output15 = sampleStr.match(Regex15);
+console.log(output15);
+//output15 will return an array of 6 element matching the white spaces and the period character .
+// ===========================================================
+// ===========================================================
+//EXAMPLE 16
+let targetStr = "2001: A Space Odyssey";
+let digitRegex = /\d/g;
+let output16 = targetStr.match(digitRegex);
+console.log(output16);
+//output16 will return an array of 4 elements matching only the numbers character
+let notDigitRegex = /\D/g;
+output16 = targetStr.match(notDigitRegex);
+console.log(output16);
+//output16 will return an array of 17 elements matching Everything except the digits
+// ===========================================================
+// ===========================================================
+//EXERCISE SOLUTION 1
+let exampleUser = "Olajutemot12";
+let userNameRegex = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+let result = userNameRegex.test(exampleUser);
+console.log(result);
+//result will return true in the console
+//-------CODE EXPLANATION---
+// ^ - start of input
+// [a-z] - first character is a letter
+// [a-z]+ - following characters are letters
+// \d*$ - input ends with 0 or more digits
+// | - or
+// ^[a-z] - first character is a letter
+// \d\d+ - following characters are 2 or more digits
+// $ - end of input
+// ===========================================================
+// ===========================================================
+//EXAMPLE 17
+let whiteSpaceStr = "Whitespaces are important in seperating words";
+let whiteSpaceRegex = /\s/g;
+let output17 = whiteSpaceStr.match(whiteSpaceRegex);
+console.log(output17);
+//output17 will return an array of 5 elements matching the six whitespaces
+let notWhiteSpaceRegex = /\S/g;
+output17 = whiteSpaceStr.match(notWhiteSpaceRegex);
+console.log(output17);
+//output17 will return an array of 40 elements matching every other character except the whiespaces
+// ===========================================================
+// ===========================================================
+//EXAMPLE 18
+let intervalQuantifierStr = "aaaah";
+let Regex18 = /a{3,5}h/;
+let output18 = intervalQuantifierStr.match(Regex18);
+console.log(output18);
+//output18 will return an array of 1 element matching the string "aaaah"
+intervalQuantifierStr = "aah";
+output18 = intervalQuantifierStr.match(Regex18);
+console.log(output18);
+//output18 will return null
+intervalQuantifierStr = "aaaaaaaaah";
+output18 = intervalQuantifierStr.match(Regex18);
+console.log(output18);
+//output18 will return an array of 1 element matching the string "aaaaah"
+// ===========================================================
+// ===========================================================
+//EXAMPLE 19
+intervalQuantifierStr = "aaaaaaaaah";
+let openRangeRegex = /a{3,}h/;
+let output19 = intervalQuantifierStr.match(openRangeRegex);
+console.log(output19);
+//output19 will return an array of 1 element matching the string "aaaaaaaaah"
+intervalQuantifierStr = "aah";
+output19 = intervalQuantifierStr.match(openRangeRegex);
+console.log(output19);
+//output19 will return null
+let quantifierStr = "aaaaaaaaah";
+let exactRegex = /a{3}h/;
+output19 = quantifierStr.match(exactRegex);
+console.log(output19);
+//output19 will return an array of 1 element matching the string "aaah"
+// ===========================================================
+// ===========================================================
+//EXAMPLE 20
+let american = "color";
+let british = "colour";
+let rainbowRegex = /colou?r/;
+console.log(rainbowRegex.test(american)); // true
+console.log(rainbowRegex.test(british)); // true
+// ===========================================================
+// ===========================================================
+//EXAMPLE 20
+let password = "abc123";
+let checkPass = /abc(?=\d)/;
+console.log(password.match(checkPass));
