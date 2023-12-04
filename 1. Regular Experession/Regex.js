@@ -270,7 +270,26 @@ console.log(rainbowRegex.test(american)); // true
 console.log(rainbowRegex.test(british)); // true
 // ===========================================================
 // ===========================================================
-//EXAMPLE 20
+//EXAMPLE 21
 let password = "abc123";
 let checkPass = /abc(?=\d)/;
 console.log(password.match(checkPass));
+//output21 will return an array of 1 element matching the string "abc", the lookahead serach for the digit after abc and since it can find it then thats true and wont match it.
+// ===========================================================
+// ===========================================================
+//EXAMPLE 22
+let myString = "Eleanor D. Roosevelt";
+let Regex22 = /(Franklin|Eleanor) (([A-Z]\.?|[A-Z][a-z]+))? Roosevelt/;
+let output22 = Regex22.test(myString);
+console.log(output22);
+//output19 will return true in the console
+// ===========================================================
+// ===========================================================
+//EXAMPLE 23
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue");
+//The replace call would return the string The sky is blue..
+//You can also access capture groups in the replacement string with dollar signs ($).
+"Code Camp".replace(/(\w+)\s(\w+)/, "$2 $1");
+//The replace call would return the string Camp Code.

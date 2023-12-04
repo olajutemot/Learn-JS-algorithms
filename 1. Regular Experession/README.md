@@ -107,3 +107,21 @@ Sometimes the patterns we want to search for may have parts of it that may or ma
 We can specify the possible existence of an element with a question mark, ?. This checks for zero or one of the preceding element. We can think of this symbol as saying the previous element is optional.
 For example, there are slight differences in American and British English and we can use the question mark to match both spellings.
 ---EXAMPLE 20 (in regex.js file )
+
+------Positive and Negative Lookahead-------
+Lookaheads are patterns that tell JavaScript to look-ahead in our string to check for patterns further along. This can be useful when we want to search for multiple patterns over the same string.
+There are two kinds of lookaheads: positive lookahead and negative lookahead.
+A positive lookahead will look to make sure the element in the search pattern is there, but won't actually match it. A positive lookahead is used as (?=...) where the ... is the required part that is not matched.
+On the other hand, a negative lookahead will look to make sure the element in the search pattern is not there. A negative lookahead is used as (?!...) where the ... is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+---EXAMPLE 21 (in regex.js file )
+
+------Check For Mixed Grouping of Characters-------
+Sometimes we want to check for groups of characters using a Regular Expression and to achieve that we use parentheses (). we have been doing something like this before now
+---EXAMPLE 22 \_\_ Fix the regex so that it checks for the names of Franklin Roosevelt or Eleanor Roosevelt in a case sensitive manner and it should make concessions for middle names.
+Then fix the code so that the regex that you have created is checked against myString and either true or false is returned depending on whether the regex matches.
+---SOLITION 22 (in regex.js file )
+
+------Use Capture Groups to Search and Replace-------
+Before now, weve been learning how to search and match a string using regex, this is very useful and fun but the search with regex patterns will be more powerful if we can replace the matches we made during our serach. We can search and replace text in a string using .replace() on a string. The inputs for .replace() is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
+.replace() method is a string method just like .match().
+---EXAMPLE 23 (in regex.js file )
