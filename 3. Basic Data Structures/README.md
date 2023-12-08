@@ -17,3 +17,11 @@ arrays are mutable objects and their lenght can be modified by adding element to
 ---EXAMPLE 3 (in regex.js file )
 
 ------Remove Items from an Array with pop() and shift()------
+Before now we learnt methods we can use to mutate an array, by adding new elements. yes we can also remove an element from an array anf this is done with the .pop() and .shift() methods. like their cousins .push() and .unshift(), the .pop() method removes the last element of the array it is appended to and .shift() method removes the first item of the array. the major diference betyween this cousins is that the methods that remove items from an array does take in a parameter unlike the ones thst add items to an array which takes the item to ne added as the parameter.
+---EXAMPLE 4 (in regex.js file )
+NOTE: we can also store the elements we are removing in a variable to be reuses in our code. check example 4 as well.
+
+------Remove Items Using splice()------
+so earlier we learnt how to remove the first and last item of an array alone, what if we want to remove an item from the middle of an array. that is where the .splice() method comes in play. This method takes in 3 parameters but we will focus on just the first two fro now. Note that the .splice() can remove more than one item from an array and it does this in a consequtive mannaer, which is why the first parameter represent the the index number where you want it to start removing the items and the second parameter represent how many number of items you want to delete or remove.
+we can also store the removed items in a new variable as the .splice() method returns the items it removed in a new array.
+---EXAMPLE 5 (in regex.js file )

@@ -46,3 +46,22 @@ console.log(romanNumerals); //would print an array value ['XIX', 'XX', 'XXI', 'X
 // ===========================================================
 // ===========================================================
 //EXAMPLE 4
+let greetings = ["whats up?", "hello", "see ya!"];
+greetings.pop();
+console.log(greetings); //would print an array value ['whats up?', 'hello'].
+greetings.shift();
+console.log(greetings); //would print an array value ['hello'].
+let poppedVariable = greetings.pop();
+console.log(poppedVariable); //would print the string "hello"
+// ===========================================================
+// ===========================================================
+//EXAMPLE 5
+let spliceArray = ["today", "was", "not", "so", "great"];
+spliceArray.splice(2, 2);
+console.log(spliceArray); //would print an arrat value ['today', 'was', 'great'].
+
+let newArray = spliceArray.splice(3, 2);
+console.log(newArray); //would print an array value ['so', 'great'].
+// ===========================================================
+// ===========================================================
+//EXAMPLE 6
