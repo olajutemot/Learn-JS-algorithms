@@ -22,6 +22,29 @@ Before now we learnt methods we can use to mutate an array, by adding new elemen
 NOTE: we can also store the elements we are removing in a variable to be reuses in our code. check example 4 as well.
 
 ------Remove Items Using splice()------
-so earlier we learnt how to remove the first and last item of an array alone, what if we want to remove an item from the middle of an array. that is where the .splice() method comes in play. This method takes in 3 parameters but we will focus on just the first two fro now. Note that the .splice() can remove more than one item from an array and it does this in a consequtive mannaer, which is why the first parameter represent the the index number where you want it to start removing the items and the second parameter represent how many number of items you want to delete or remove.
+so earlier we learnt how to remove the first and last item of an array alone, what if we want to remove an item from the middle of an array. that is where the .splice() method comes in play. This method takes in 3 parameters but we will focus on just the first two for now. Note that the .splice() can remove more than one item from an array and it does this in a consequtive mannaer, which is why the first parameter represent the the index number where you want it to start removing the items and the second parameter represent how many number of items you want to delete or remove.
 we can also store the removed items in a new variable as the .splice() method returns the items it removed in a new array.
 ---EXAMPLE 5 (in regex.js file )
+
+------ADD Items Using splice()------
+the .splice() method as said earlier can take in 3 parameters but we only mentioned two before, well, we can use the third parameter, it comprised of one or more element(s) we would like to add to the array. This can be incredibly useful for quickly switching out an element, or a set of elements, for another.
+note: the parameters can be assigned to a variable first before use in the .splice() method.
+---EXAMPLE 6 (in regex.js file )
+
+------Copy Array Items Using slice()------
+The next method we will cover is .slice(). Rather than modifying an array using the .splice() and others, .slice() copies or extracts a given number of elements to a new array, leaving the array it is called upon untouched. .slice() takes only 2 parameters — the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:
+---EXAMPLE 7 (in regex.js file )
+
+------Copy an Array with the Spread Operator------
+before now, we talked about how the .slice() allows us to be selective about what elements of an array to copy or extract, among several other useful tasks, ES6's new spread operator(...) allows us to easily copy all of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: (...)
+---EXAMPLE 8 (in regex.js file )
+
+------Combine Arrays with the Spread Operator------
+We can combine differnt arrays using the spread operator on the array we would like to include into another array i.e to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another
+---EXAMPLE 9 (in regex.js file )
+
+------Check For The Presence of an Element With indexOf()------
+Since arrays can be changed, or mutated, at any time, there's no guarantee about where a particular piece of data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with another built-in method, .indexOf(), that allows us to quickly and easily check for the presence of an element on an array. .indexOf() method takes an element as a parameter, and when called, it returns the position, or index, of that element, or -1 if the element does not exist on the array.
+---EXAMPLE 10 (in regex.js file )
+
+------Iterate Through All an Array's Items Using For Loops------
