@@ -134,7 +134,7 @@ let nestedObject = {
   },
 };
 nestedObject.data.onlineStatus.busy = 10;
-console.log(nestedObject); //would print tht value of busy in the object to ne 10
+console.log(nestedObject); //would print the value of busy in the object to ne 10
 // ===========================================================
 // ===========================================================
 //EXAMPLE 13
@@ -168,3 +168,55 @@ console.log(users.Jeff.hasOwnProperty("age")); //will return true
 // ===========================================================
 // ===========================================================
 //EXAMPLE 15
+const refrigerator = {
+  milk: 1,
+  eggs: 12,
+};
+for (const food in refrigerator) {
+  console.log(food, refrigerator[food]); //would print milk 1 and eggs 12, with each key-value pair on its own line.
+}
+// ===========================================================
+// ===========================================================
+//EXAMPLE 16
+let newUsers = {
+  Alan: {
+    age: 27,
+    online: false,
+  },
+  Jeff: {
+    age: 32,
+    online: true,
+  },
+  Sarah: {
+    age: 48,
+    online: false,
+  },
+  Ryan: {
+    age: 19,
+    online: true,
+  },
+};
+console.log(Object.keys(newUsers)); //would print an array value [ 'Alan', 'Jeff', 'Sarah', 'Ryan' ]
+// ===========================================================
+// ===========================================================
+//EXAMPLE 17
+let user = {
+  name: "Kenneth",
+  age: 28,
+  data: {
+    username: "kennethCodesAllDay",
+    joinDate: "March 26, 2016",
+    organization: "freeCodeCamp",
+    friends: ["Sam", "Kira", "Tomo"],
+    location: {
+      city: "San Francisco",
+      state: "CA",
+      country: "USA",
+    },
+  },
+};
+function addFriend(userObj, friend) {
+  userObj.data.friends.push(friend);
+  return userObj.data.friends;
+}
+console.log(addFriend(user, "Pete")); //would print an array value  ["Sam", "Kira", "Tomo", "pete"]

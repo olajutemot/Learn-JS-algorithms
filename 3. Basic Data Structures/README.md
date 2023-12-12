@@ -64,3 +64,16 @@ Now we know how to ADD, REMOVE, and MODIFY the key-value pairs of an object, But
 ---EXAMPLE 14 (in regex.js file )
 
 ------Iterate Through the Keys of an Object with a for...in Statement------
+Before now we were able to iterate or loop through an array, using the for loop. We can also iterate through the properties of an object using the for...in loop.
+NOTE: Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
+---EXAMPLE 15 (in regex.js file )
+
+------Generate an Array of All Object Keys with Object.keys()------
+We can also generate an array which contains all the keys stored in an object with the Object.keys() method. This method takes an object as the argument and returns an array of strings representing each property in the object. Again, there will be no specific order to the entries in the array. NOTE: the "O" at the begining of Object.keys() method is case sensitive.
+---EXAMPLE 16 (in regex.js file )
+
+------Modify an Array Stored in an Object------
+weve been able to learn the basics of array and object. the last Example (Example 17), explain how we can manipulate an array that is seated deep in an object.
+---EXAMPLE 17
+Take a look at the object we've provided in the code editor. The user object contains three keys. The data key contains five keys, one of which contains an array of friends. From this, you can see how flexible objects are as data structures. We've started writing a function addFriend. Finish writing it so that it takes a user object and adds the name of the friend argument to the array stored in user.data.friends and returns that array.
+---SOLUTION 17 (in regex.js file )
