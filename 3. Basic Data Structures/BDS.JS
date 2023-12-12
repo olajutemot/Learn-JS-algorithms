@@ -103,3 +103,68 @@ console.log(found2); //would print the number 1
 // ===========================================================
 // ===========================================================
 //EXAMPLE 11
+const tekkenCharacter = {
+  player: "Hwoarang",
+  fightingStyle: "Tae Kwon Doe",
+  human: true,
+};
+tekkenCharacter.origin = "South Korea";
+console.log(tekkenCharacter); //will print the object value { player: 'Hwoarang', fightingStyle: 'Tae Kwon Doe', human: true, origin: 'South Korea',}
+
+tekkenCharacter["hair color"] = "dyed orange";
+console.log(tekkenCharacter); // will print the object value { player: 'Hwoarang', fightingStyle: 'Tae Kwon Doe', human: true, origin: 'South Korea', hair color: "dyed orange", }
+
+const eyes = "eye color";
+tekkenCharacter[eyes] = "brown";
+console.log(tekkenCharacter); // will print the object value {player: 'Hwoarang', fightingStyle: 'Tae Kwon Doe', human: true, origin: 'South Korea', hair color: 'dyed orange', eye color: 'brown'};
+// ===========================================================
+// ===========================================================
+//EXAMPLE 12
+let nestedObject = {
+  id: 28802695164,
+  date: "December 31, 2016",
+  data: {
+    totalUsers: 99,
+    online: 80,
+    onlineStatus: {
+      active: 67,
+      away: 13,
+      busy: 8,
+    },
+  },
+};
+nestedObject.data.onlineStatus.busy = 10;
+console.log(nestedObject); //would print tht value of busy in the object to ne 10
+// ===========================================================
+// ===========================================================
+//EXAMPLE 13
+//From EXAMPLE 11
+delete tekkenCharacter.fightingStyle;
+console.log(tekkenCharacter); // will print the object value {player: 'Hwoarang', human: true, origin: 'South Korea', hair color: 'dyed orange', eye color: 'brown'};
+// ===========================================================
+// ===========================================================
+//EXAMPLE 14
+let users = {
+  Alan: {
+    age: 27,
+    online: true,
+  },
+  Jeff: {
+    age: 32,
+    online: true,
+  },
+  Sarah: {
+    age: 48,
+    online: true,
+  },
+  Ryan: {
+    age: 19,
+    online: true,
+  },
+};
+console.log(users.hasOwnProperty("Alan")); //will return true
+console.log("Alan" in users); //wil return true
+console.log(users.Jeff.hasOwnProperty("age")); //will return true
+// ===========================================================
+// ===========================================================
+//EXAMPLE 15

@@ -47,4 +47,20 @@ We can combine differnt arrays using the spread operator on the array we would l
 Since arrays can be changed, or mutated, at any time, there's no guarantee about where a particular piece of data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with another built-in method, .indexOf(), that allows us to quickly and easily check for the presence of an element on an array. .indexOf() method takes an element as a parameter, and when called, it returns the position, or index, of that element, or -1 if the element does not exist on the array.
 ---EXAMPLE 10 (in regex.js file )
 
-------Iterate Through All an Array's Items Using For Loops------
+------Add Key-Value Pairs to JavaScript Objects------
+Javascript object at their basics are a collection of key-value pairs, the value can also be called thr piece of data that is mapped to a unique identifier (keys) also called properties. we can also add new values to an existing object by using the dot notation. in cases where the property or key to ne added has a space between them, we use the bracket notation [], and written in quotes, if not without quotes, it will be evaluated as a variable and the name of the property will be whatever value the variable is.
+---EXAMPLE 11 (in regex.js file )
+
+------Modify an Object Nested Within an Object------
+An object can also be nested inside another object as the value of one the properties of the higher leveled object. to access such deeply seated object we can still use our dot notation.
+---EXAMPLE 12 (in regex.js file )
+
+------Use the delete Keyword to Remove Object Properties------
+before now we have been able to add a key-value pair to an object and also modify the value of a property. we can also delete a key-value pair from an object and this can be done using the delte keyword.
+---EXAMPLE 13 (in regex.js file )
+
+------Check if an Object has a Property------
+Now we know how to ADD, REMOVE, and MODIFY the key-value pairs of an object, But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. One uses the hasOwnProperty() method and the other uses the (in) keyword. Both ways will return a boolean value.
+---EXAMPLE 14 (in regex.js file )
+
+------Iterate Through the Keys of an Object with a for...in Statement------
