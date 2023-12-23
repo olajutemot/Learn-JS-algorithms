@@ -30,3 +30,13 @@ Only integers greater than or equal to zero will be supplied to the function
 Return the length of the longest word in the provided sentence.
 Your response should be a number.
 ---SOLUTION 4 (in regex.js file )
+
+------Return Largest Numbers in Arrays------
+Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
+---SOLUTION 5 (in regex.js file )
+
+------Confirm the Ending------
+Check if a string (first argument, str) ends with the given target string (second argument, target).
+This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+---SOLUTION 6 (in regex.js file )
