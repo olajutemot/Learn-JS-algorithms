@@ -44,3 +44,15 @@ This challenge can be solved with the .endsWith() method, which was introduced i
 ------Finders Keepers------
 Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
 ---SOLUTION 7 (in regex.js file )
+
+------Title Case of a String------
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+For the purpose of this exercise, you should also capitalize connecting words like the and of.
+---SOLUTION 8 (in regex.js file )
+
+------Example on Splice & Slice------
+You are given two arrays and an index.
+Copy each element of the first array into the second array, in order.
+Begin inserting elements at index n of the second array.
+Return the resulting array. The input arrays should remain the same after the function runs.
+---SOLUTION 9 (in regex.js file )

@@ -112,3 +112,17 @@ findElement([1, 2, 3, 4], (num) => num % 2 === 0);
 // ===========================================================
 // ===========================================================
 //SOLUTION 8
+function titleCase(str) {
+  const titleStr = str.split(" ");
+  const updatedStr = [];
+  for (let st in titleStr) {
+    updatedStr[st] =
+      titleStr[st][0].toUpperCase() + titleStr[st].slice(1).toLowerCase();
+  }
+  return updatedStr.join(" ");
+}
+
+titleCase("I'm a little tea pot");
+// ===========================================================
+// ===========================================================
+//SOLUTION 9
