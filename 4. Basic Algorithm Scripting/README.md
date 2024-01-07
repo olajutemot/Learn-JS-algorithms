@@ -56,3 +56,9 @@ Copy each element of the first array into the second array, in order.
 Begin inserting elements at index n of the second array.
 Return the resulting array. The input arrays should remain the same after the function runs.
 ---SOLUTION 9 (in regex.js file )
+
+------Example on Falsy Bouncer------
+Remove all falsy values from an array. Return a new array; do not mutate the original array.
+Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+Hint: Try converting each value to a Boolean.
+---SOLUTION 10 (in regex.js file )

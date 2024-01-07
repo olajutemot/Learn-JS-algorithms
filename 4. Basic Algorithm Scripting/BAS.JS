@@ -126,3 +126,31 @@ titleCase("I'm a little tea pot");
 // ===========================================================
 // ===========================================================
 //SOLUTION 9
+function frankenSplice(arr1, arr2, n) {
+  let copyArr2 = arr2.slice();
+
+  for (let i = 0; i < arr1.length; i++) {
+    copyArr2.splice(n, 0, arr1[i]);
+    n++;
+  }
+  return copyArr2;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+// ===========================================================
+// ===========================================================
+//SOLUTION 10
+function bouncer(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+bouncer([7, "ate", "", false, 9]);
+// ===========================================================
+// ===========================================================
+//SOLUTION 11
