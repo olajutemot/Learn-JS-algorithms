@@ -82,3 +82,70 @@ boerBoo.numLegs = 4;
 // ===========================================================
 // ===========================================================
 //EXAMPLE 7
+let Bird = function (name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 2;
+};
+
+let crow = new Bird("Alexis", "black");
+
+crow instanceof Bird; //true
+//If an object is created without using a constructor, instanceof will verify that it is not an instance of that constructor:
+let canary = {
+  name: "Mildred",
+  color: "Yellow",
+  numLegs: 2,
+};
+
+canary instanceof Bird; //false
+// ===========================================================
+// ===========================================================
+//EXAMPLE 8
+function Dog(name) {
+  this.name = name;
+  this.numLegs = 4;
+}
+
+let localDog = new Dog("Barbie");
+let ownProps = [];
+
+for (let property in canary) {
+  if (canary.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+}
+console.log(ownProps); //this will print an array ["name", "numLegs"] to the console
+// ===========================================================
+// ===========================================================
+//EXAMPLE 9
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+console.log(beagle.numLegs); //this will print a number vale 4 to the console
+// ===========================================================
+// ===========================================================
+//EXAMPLE 10
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+beagle = new Dog("Snoopy");
+ownProps = [];
+let prototypeProps = [];
+
+for (let property in beagle) {
+  if (beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
+console.log(ownProps); //will print an array ["name"]
+console.log(prototypeProps); //will print an array ["numLegs"]
+// ===========================================================
+// ===========================================================
+//EXAMPLE 11
