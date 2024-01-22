@@ -28,3 +28,9 @@ Constructors follow a few conventions:
 We've established the fact that a constructor function can be used to create an object, this can be done by calling the (new) keyword on the constructor function. this will create a new obect with the variable name it is assigned to as the name of the object.
 NOTE: (this) inside the constructor always refers to the object being created.
 ---EXAMPLE 5 (in regex.js file)
+
+------Extend Constructors to Receive Arguments------
+Constructors are awesome because we can create multiple objects from them, but from our example earlier all objects created will have the same value because the behaviour has been specified. what if we want to create different objects from a single constructor function to have the same properties but different values. For example we what to have an object describing each of the dogs in a vet clinic. Thats where passing an argument comes in. The constructor function can recieve parameters and the argument will be passed in when creating the object with the (new) keyword.
+---EXAMPLE 6 (in regex.js file)
+
+------Verify an Object's Constructor with instanceof------

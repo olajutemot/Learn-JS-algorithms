@@ -65,3 +65,20 @@ hound.name = "Jackie";
 // ===========================================================
 // ===========================================================
 //EXAMPLE 6
+function Dog(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 4;
+}
+let germanSherperd = new Dog("Jerry", "white");
+//the germanSherperd object has the ffg propertis and the value
+germanSherperd.name = "jerrry";
+germanSherperd.color = "white";
+germanSherperd.numLegs = 4;
+let boerBoo = new Dog("bob", "black");
+boerBoo.name = "bob";
+boerBoo.color = "black";
+boerBoo.numLegs = 4;
+// ===========================================================
+// ===========================================================
+//EXAMPLE 7
