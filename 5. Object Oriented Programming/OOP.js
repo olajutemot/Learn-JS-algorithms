@@ -149,3 +149,58 @@ console.log(prototypeProps); //will print an array ["numLegs"]
 // ===========================================================
 // ===========================================================
 //EXAMPLE 11
+function Dog(name) {
+  this.name = name;
+}
+
+function joinDogFraternity(candidate) {
+  if (candidate.constructor === Dog) {
+    return true;
+  }
+  return false;
+}
+
+// ===========================================================
+// ===========================================================
+//EXAMPLE 12
+Dog.prototype.numLegs = 4;
+Dog.prototype.eat = function () {
+  console.log("nom nom nom");
+};
+Dog.prototype.describe = function () {
+  console.log("My name is " + this.name);
+};
+//the above is when we write them out but this can become tedious after more than a few properties and can be solved below
+Dog.prototype = {
+  numLegs: 4,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+  describe: function () {
+    console.log("My name is " + this.name);
+  },
+};
+// ===========================================================
+// ===========================================================
+//EXAMPLE 13
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype = {
+  constructor: Dog,
+  numLegs: 4,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+  describe: function () {
+    console.log("My name is " + this.name);
+  },
+};
+// ===========================================================
+// ===========================================================
+//EXAMPLE 14
+function Dog(name) {
+  this.name = name;
+}
+beagle = new Dog("Snoopy");
+Dog.prototype.isPrototypeOf(beagle); //this would return true

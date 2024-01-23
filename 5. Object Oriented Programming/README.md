@@ -38,14 +38,38 @@ when an object is created from a constructor function, that object is said to be
 ---EXAMPLE 7 (in regex.js file)
 
 ------Understand Own Properties------
-The constructor Function can be called the instance Object and every propert created using the this keyword in this function is called the Own Properties. Note, every instance of the instance object i.e every object created from the constructor function will have its own copy of the Own propwerties. we can confirm this using a for-in loop.
----EXAMPLE 8 (in regex.js file)
+The Own Properties are defined directly on the object instance. Note, we can have different copies of object instance created from a constructor function, and they will all their own copy of the Own properties. we can confirm this using a for-in loop.
+---EXAMPLE 8 (in regex.js file).
 
 ------Use Prototype Properties to Reduce Duplicate Code------
-For properties that will be constant in every copy of our created instance of the constructor function, a .prototype method can be used, and this is present in every constructor function ot instance object as it allows us to send a property through to all instace of the instance object. implicitly creating this variable like in the examples we have before will not be an issue when we have just like two instance of the instance object created, that means we just have two variables, but in a case where millions of new objects will be created from he constructor function, that will be a repititive task using up or space unnecessarily by creating multiple variables, but this can be avoided by using the .prototype method on the instance Object.
-NOTE: dont miss Instance Object with Instance of the instance object, the instance object is the constructor function, and any new object created from the constructor function, is an instance of the instance object.
+For properties that will be constant in every copy of our created instance of the constructor function, a .prototype method can be used, and this is present in every constructor function as it allows us to send a property through to all object instance. Implicitly creating this variable like in the examples we have before will not be an issue when we have just like two object instance created, that means we just have two variables, but in a case where millions of new object intances will be created from the constructor function, that will be a repititive task using up space unnecessarily by creating multiple variables, but this can be avoided by using the .prototype method on the constructor function.
 ---EXAMPLE 9 (in regex.js file)
 
 ------Iterate Over All Properties------
-We have now seen two kinds of properties: own properties and prototype properties. Own properties are defined directly on the object instance or instance object itself. And prototype properties are defined on the prototype. the protoype properties are not created as own properties for instance of the object instance created i.e are not created as a new property and value pair inside the new instance of the object created, but when they can be refrenced because of what is called prototypal inheritance i.e the instance of the object instance will inherit the propotype properties and when the property is called on them, first they look at their own properties and if its not there, they move up to look at the object instance prototype properties to give the value.
+We have now seen two kinds of properties: own properties and prototype properties. Own properties are defined directly on the object instance itself. And prototype properties are defined on the prototype. the protoype properties are not created as own properties for the object instance created i.e are not created as a new property and value pair inside the new object instance created, but they can be refrenced because of what is called prototypal inheritance i.e the object instance will inherit the propotype properties and when the property is called on them, first they look at their own properties, and if its not there, they move up to look at the prototype properties to give the value.
 ---EXAMPLE 10 (in regex.js file)
+
+------Understand the Constructor Property------
+Constructor property is a kind of property that is present on the instances of the objects created, it is a refrence to the constructor function, it returns boolean and it can be used to check if an object is created from a constructor function.
+Note: Since the constructor property can be overwritten (which will be covered in the next two challenges) it’s generally better to use the instanceof method to check the type of an object.
+---EXAMPLE 11 (in regex.js file)
+
+------Change the Prototype to a New Object------
+We have explained why a prototype is used on a constructor function, i.e it can be used to prevent the repititive creation of properties that are to be constance throught out the copy of our object intances to be created, but in cases where we have multiple properties that are constant throughout our copy of object instnaces, we can change the prototype to a new object that contains all the properties and it be added at once to the object instances if called on them.
+---EXAMPLE 12 (in regex.js file)
+
+------Remember to Set the Constructor Property when Changing the Prototype------
+The prototype is originally an object, but when we manually set the prototype to a new object. It erases the constructor property! This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results. this feature can be retained by implicitly setting the constructor in the new prototype object.
+---EXAMPLE 13 (in regex.js file)
+
+------Understand Where an Object’s Prototype Comes From------
+It is important to be able to check where a prototype that has been inherited by an object intance is coming from i.e know the parent constructor function, this is like performing a DNA test on the Object instance. This can be achieved by using the .isPrototypeOf method on the prototype object, and it returns a boolean value.
+---EXAMPLE 14 (in regex.js file)
+
+------Understand the Prototype Chain------
+The .hasOwnProperty() method of Object instances returns a boolean indicating whether this object has the specified property as its own property (as opposed to inheriting it). All objects in JS has its own prototype and every objects prototype as said earlier is also an object. so the chain goes up till the last object as a prototype of null.
+obj-->obj.prototype-->obj.prototype.prototype(if available)-->Object.prototype-->null.
+This prototypal inheritance explains the dynamic nature of JS and differntiates it from class based programming language like java and C++.
+---EXAMPLE 15 (in regex.js file): From our example,
+The hasOwnProperty method is defined in Object.prototype, which can be accessed by Dog.prototype, which can then be accessed by beagle. This is an example of the prototype chain. In this prototype chain, Dog is the supertype for beagle, while beagle is the subtype. Object is a supertype for both Dog and beagle. Object is a supertype for all objects in JavaScript. Therefore, any object can use the hasOwnProperty method.
+NOTE: Object.prototype is present in every JS Object
