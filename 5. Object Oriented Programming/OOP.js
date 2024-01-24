@@ -204,3 +204,61 @@ function Dog(name) {
 }
 beagle = new Dog("Snoopy");
 Dog.prototype.isPrototypeOf(beagle); //this would return true
+// ===========================================================
+// ===========================================================
+//EXAMPLE 15
+function Dog(name) {
+  this.name = name;
+}
+beagle = new Dog("Snoopy");
+Dog.prototype.isPrototypeOf(beagle); // yields true
+
+Object.prototype.isPrototypeOf(Dog.prototype); //yields true
+// ===========================================================
+// ===========================================================
+//EXAMPLE 16
+Bird.prototype = {
+  constructor: Bird,
+  describe: function () {
+    console.log("My name is " + this.name);
+  },
+};
+
+Dog.prototype = {
+  constructor: Dog,
+  describe: function () {
+    console.log("My name is " + this.name);
+  },
+};
+//Notice in the above the describe method is shared by Bird and Dog:
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  describe: function () {
+    console.log("My name is " + this.name);
+  },
+};
+//notice we craete a new function and give its prototype the method describe
+Bird.prototype = {
+  constructor: Bird,
+};
+
+Dog.prototype = {
+  constructor: Dog,
+};
+//we can then remove it from our code.
+// ===========================================================
+// ===========================================================
+//EXAMPLE 17
+//following example from 16 we can create an instance of the supertype
+let duck = Object.create(Animal.prototype);
+let beagle17 = Object.create(Animal.prototype);
+
+duck.describe(); //will inherit the property
+duck instanceof Animal; //true
+beagle17.describe(); //will inherit the property
+beagle17 instanceof Animal; //true
+// ===========================================================
+// ===========================================================
+//EXAMPLE 18

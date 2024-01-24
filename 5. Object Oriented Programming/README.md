@@ -73,3 +73,16 @@ This prototypal inheritance explains the dynamic nature of JS and differntiates 
 ---EXAMPLE 15 (in regex.js file): From our example,
 The hasOwnProperty method is defined in Object.prototype, which can be accessed by Dog.prototype, which can then be accessed by beagle. This is an example of the prototype chain. In this prototype chain, Dog is the supertype for beagle, while beagle is the subtype. Object is a supertype for both Dog and beagle. Object is a supertype for all objects in JavaScript. Therefore, any object can use the hasOwnProperty method.
 NOTE: Object.prototype is present in every JS Object
+
+------Use Inheritance So You Don't Repeat Yourself------
+DRY is a term in programming and it literally means making your code as dry as possible, not repeating codes as this can make our code prone to errors. When dealing with constructor and working with objects, the theory of inheritance can be of importance.
+For example, when we have two or more different construction functions with the same methods in their prototype, we can write a new constructor function and give its prototype the method. this new function will act as a parent(supertype) where the other construction function will inherit their methods from.
+---EXAMPLE 16 (in regex.js file):
+
+------Inherit Behaviors from a Supertype------
+last time we have created a supertype but the supposed children dont just inherit from the parent, because at this point there is no link between the supertype we created and the supposed children or substypes. To inherit from a supertype, we create an instance of the supertype. Before now we create an instance of an object using the new keyword, this would work here as well but it has some disadvatages so we use the Object.create() method
+Object.create(obj) creates a new object, and sets obj as the new object's prototype. Recall that the prototype is like the "recipe" for creating an object.
+---EXAMPLE 17 (in regex.js file):
+
+------Set the Child's Prototype to an Instance of the Parent------
+In the previous challenge you saw the first step for inheriting behavior from the supertype (or parent) Animal: making a new instance of Animal.
