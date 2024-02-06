@@ -98,7 +98,7 @@ A constructor function, that inherit its proptotype from a parent or supertype p
 
 ------Add Methods After Inheritance------
 In the last section of adding methods after inheritance, we notice how me can add a unique method to a childs prototype so it has both methods from its parents and its own behaviour or methods. With this same method we can override a parents method in the childs prototype, by giving the child a behaviour or method the same name as it is given in the parent, this will override that of the parent.
----EXAMPLE 20 (in regex.js file):
+---EXAMPLE 21 (in regex.js file):
 ~From the example, below is how javascript searches for a behaviour in an prototype chain.
 let penguin = new Penguin(); and you call penguin.fly(), this is how JavaScript looks for the method on the prototype chain of duck:
 penguin => Is fly() defined here? No.
@@ -106,4 +106,8 @@ Penguin => Is fly() defined here? => Yes. Execute it and stop searching.
 Animal => fly() is also defined, but JavaScript stopped searching before reaching this level.
 Object => JavaScript stopped searching before reaching this level.
 
-------Add Methods After Inheritance------
+------Use a Mixin to Add Common Behavior Between Unrelated Objects------
+As it has been established that a behaviour or method is shared through inheritance, but in cases were we have unrelated objects and we want them to share the same behaviour, Inheritance does not work well for unrelated objects like Bird and Airplane. They can both fly, but a Bird is not a type of Airplane and vice versa. For unrelated objects, it's better to use mixins. A Mixin is a class containing methods or behaviour that can be shared among other classes or objects.
+---EXAMPLE 22 (in regex.js file):
+
+------Use Closure to Protect Properties Within an Object from Being Modified Externally------

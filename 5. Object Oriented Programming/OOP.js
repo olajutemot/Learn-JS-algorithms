@@ -340,3 +340,35 @@ Penguin.prototype.fly = function () {
 
 let penguin = new Penguin();
 console.log(penguin.fly()); //will print the string "Alas, this is a flightless bird." to the console
+// ===========================================================
+// ===========================================================
+//EXAMPLE 22
+let bird = {
+  name: "Donald",
+  numLegs: 2,
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat",
+};
+
+// Only change code below this line
+let glideMixin = function (obj) {
+  obj.glide = function () {};
+};
+glideMixin(bird);
+glideMixin(boat);
+// ===========================================================
+// ===========================================================
+//EXAMPLE 23
+let duckWeight = 35;
+function Bird23() {
+  let weight = 15;
+  this.getExtraWeight = function () {
+    return duckWeight - weight;
+  };
+}
+let duck23 = new Bird23();
+duck23.weight = 35; //will not work because of closure
+console.log(duck23.getExtraWeight()); //will print the number value 20
