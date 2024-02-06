@@ -262,3 +262,81 @@ beagle17 instanceof Animal; //true
 // ===========================================================
 // ===========================================================
 //EXAMPLE 18
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+};
+
+function Dog() {}
+
+// Only change code below this line
+Dog.prototype = Object.create(Animal.prototype);
+
+let beagle18 = new Dog();
+beagle18.eat(); //will inherit the property
+console.log(beagle18);
+// ===========================================================
+// ===========================================================
+//EXAMPLE 19
+function Animal() {}
+function Bird19() {}
+function Dog19() {}
+
+Bird19.prototype = Object.create(Animal.prototype);
+Dog19.prototype = Object.create(Animal.prototype);
+
+// Only change code below this line
+Bird19.prototype.constructor = Bird19;
+Dog19.prototype.constructor = Dog19;
+let duck19 = new Bird19();
+let beagle19 = new Dog19();
+
+console.log(duck19.constructor); //will print Bird19
+console.log(beagle19.constructor); //will print Dog19
+// ===========================================================
+// ===========================================================
+//EXAMPLE 20
+function Animal20() {}
+Animal20.prototype.eat = function () {
+  return "nom nom nom";
+};
+
+function Dog20() {}
+
+// Only change code below this line
+Dog20.prototype = Object.create(Animal20.prototype);
+Dog20.prototype.constructor = Dog20;
+Dog20.prototype.bark = function () {
+  return "Woof";
+};
+
+// Only change code above this line
+let beagle20 = new Dog20();
+console.log(beagle20.eat()); //would print the string "nom nom nom" to the console on line 305
+console.log(beagle20.bark()); //would print the string "Woof!" to the console on line 314
+// ===========================================================
+// ===========================================================
+//EXAMPLE 21
+function Bird21() {}
+
+Bird21.prototype.fly = function () {
+  return "I am flying!";
+};
+
+function Penguin() {}
+Penguin.prototype = Object.create(Bird21.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Only change code below this line
+Penguin.prototype.fly = function () {
+  return "Alas, this is a flightless bird.";
+};
+
+// Only change code above this line
+
+let penguin = new Penguin();
+console.log(penguin.fly()); //will print the string "Alas, this is a flightless bird." to the console
