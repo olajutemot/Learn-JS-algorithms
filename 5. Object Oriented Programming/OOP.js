@@ -372,3 +372,31 @@ function Bird23() {
 let duck23 = new Bird23();
 duck23.weight = 35; //will not work because of closure
 console.log(duck23.getExtraWeight()); //will print the number value 20
+// ===========================================================
+// ===========================================================
+//EXAMPLE 24
+(function () {
+  console.log("A cozy nest is ready");
+})(); //will print the string "A cozy nest is ready" immediately to the console
+// ===========================================================
+// ===========================================================
+//EXAMPLE 25
+const funModule = (function () {
+  return {
+    isCuteMixin: function (obj) {
+      obj.isCute = function () {
+        return true;
+      };
+    },
+    singMixin: function (obj) {
+      obj.sing = function () {
+        return this.name + " " + "is Singing to an awesome tune";
+      };
+    },
+  };
+})();
+let bird25 = {
+  name: "chirpy",
+};
+funModule.singMixin(bird25);
+console.log(bird25.sing()); //would print string value "chirpy is Singing to an awesome tune"

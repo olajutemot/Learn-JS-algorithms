@@ -111,3 +111,13 @@ As it has been established that a behaviour or method is shared through inherita
 ---EXAMPLE 22 (in regex.js file):
 
 ------Use Closure to Protect Properties Within an Object from Being Modified Externally------
+properties set inside an object can be set publicly i.e to be accessed anywhere outside the object, for example the bird object in example 22. Or privatelly set a property, by using closure, i.e declaring the variable first inside the construction function and this cant be accessed out side of the object and its instances. This changes the scope of that variable to be within the constructor function versus available globally. This way, the variable can only be accessed and changed by methods also within the constructor function.
+---EXAMPLE 23 (in regex.js file):
+
+------Understand the Immediately Invoked Function Expression (IIFE)------
+there is a common pattern in JS and it is to execute a function immediately it was written. This means we dont have to call the function to use it, therefore such function does not need a name because it wont be called, so they are mainly anonymous function expression written with parenthesis at the back. Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an immediately invoked function expression or IIFE.
+---EXAMPLE 24 (in regex.js file):
+
+------Use an IIFE to Create a Module------
+this IIFE can be used to group related functionality into a single object or module to be resued. we can group two different Mixin functions inside a IIFE and assign the IIFE to a variable which will act as the module or object. the module will then allow us to access our Mixin functions one after the other using the dot notation.
+---EXAMPLE 25 (in regex.js file):
