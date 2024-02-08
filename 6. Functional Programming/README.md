@@ -17,7 +17,8 @@ Functional programming is a programming paradigm that treats computation as the 
    A pure function is a fundamental concept in functional programming. It produces the same output for the same input and has no side effects.
 5. Higher-Order Functions:
    Functional programming makes extensive use of higher-order functions, which are functions that take other functions as arguments or return functions.
-   ---EXAMPLE 1 (in regex.js file )
+
+---EXAMPLE 1 (in regex.js file )
 
 ------Understand Functional Programming Terminology------
 Callbacks are the functions that are slipped or passed into another function to decide the invocation of that function. You may have seen them passed to other methods, for example in filter, the callback function tells JavaScript the criteria for how to filter an array.
@@ -27,3 +28,6 @@ Functions that can be assigned to a variable, passed into another function, or r
 The functions that take a function as an argument, or return a function as a return value, are called higher order functions.
 
 When functions are passed in to or returned from another function, then those functions which were passed in or returned can be called a lambda.
+---EXAMPLE 2 (in regex.js file )
+
+------Understand the Hazards of Using Imperative Code------
