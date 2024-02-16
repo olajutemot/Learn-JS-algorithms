@@ -78,3 +78,19 @@ Finally, the function would always produce the same output for the same set of i
 ---EXAMPLE 5 (in regex.js file ): Write the incrementer function so it takes an argument, and then returns a result after increasing the value by one.
 
 ------Refactor Global Variables Out of Functions------
+the two main principles of functional programming that weve seen here are:
+
+1. do not alter a variable or object: create new variable or objects in the function, and return them from a function if need be.
+2. we want to be able to declare parameters when working with functions, so any computations inside the function will depend on the argument passed into the function.
+   ---EXAMPLE 6 (in regex.js file ): write a code so the global array bookList variable is not altered. The add function should add the given bookName to the end of the array passed to it and return a new array (list). The remove function should remove the given bookName from the array passed to it.
+
+Note: Both functions should return an array, and any new parameters should be added before the bookName parameter.
+
+------Use the map Method to Extract Data from an Array------
+so far we have learnt how to use pure functions to avoid side effects as compared to object oriented programming. It is called a functional programming becuase it uses the theory of functions for all its processes. functions in javascript are firstclass objects, so functions can be stored as variables, a function can be written in another function etc.
+Here we will be looking at some simple array functions, which are methods on the array object prototype. In this exercise we are looking at Array.prototype.map(), or more simply map.
+The .map method can be used on an arrays and it is used to loop through the properties of an array. it takes in a call-back function and returns a new array containing the results of calling the callback function on each properties or elements. The call back function is passed 3 arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the map method was called.
+this first example is only using the first argument of the call back function.
+---EXAMPLE 7 (in regex.js file ): The watchList array holds objects with information on several movies. Use map on watchList to assign a new array of objects to the ratings variable. Each movie in the new array should have only a title key with the name of the film, and a rating key with the IMDB rating. The code in the editor currently uses a for loop to do this, so you should replace the loop functionality with your map expression.
+
+------Implement map on a Prototype------
