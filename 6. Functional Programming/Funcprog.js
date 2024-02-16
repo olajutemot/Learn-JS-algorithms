@@ -100,14 +100,10 @@ Window.prototype.tabOpen = function (tab) {
 
 // When you close a tab
 Window.prototype.tabClose = function (index) {
-  // Only change code below this line
-
-  const tabsBeforeIndex = this.tabs.splice(0, index); // Get the tabs before the tab
-  const tabsAfterIndex = this.tabs.splice(index + 1); // Get the tabs after the tab
+  const tabsBeforeIndex = this.tabs.slice(0, index); // Get the tabs before the tab
+  const tabsAfterIndex = this.tabs.slice(index + 1); // Get the tabs after the tab
 
   this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // Join them together
-
-  // Only change code above this line
 
   return this;
 };
@@ -134,17 +130,33 @@ const finalTabs = socialWindow
   .tabOpen() // Open a new tab for cat memes
   .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
   .join(workWindow.tabClose(1).tabOpen());
-console.log(finalTabs.tabs);
+console.log(finalTabs.tabs); //will print an array value ['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']
 // ===========================================================
 // ===========================================================
 //EXAMPLE 4
-// The global variable
+// the global variable
 let fixedValue = 4;
 
 function incrementer() {
-  // Only change code below this line
-  // Only change code above this line
+  return fixedValue + 1;
 }
+
+let newValue = incrementer(); // Should equal 5
+console.log(fixedValue); // will print the number value 4
+// Using the increment operator (++) on fixedValue will mutate fixedValue,
+// meaning it will no longer reference the same value it was assigned with.
 // ===========================================================
 // ===========================================================
 //EXAMPLE 5
+// the global variable
+fixedValue = 4;
+
+function incrementer(value) {
+  return value + 1;
+}
+
+let differentValue = incrementer(fixedValue); // Should equal 5
+console.log(fixedValue); // will print the number value 4
+// ===========================================================
+// ===========================================================
+//EXAMPLE 6

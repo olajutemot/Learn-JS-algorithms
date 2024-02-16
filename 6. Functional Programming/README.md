@@ -40,12 +40,14 @@ Often the statements change the state of the program, like updating global varia
 In contrast, functional programming is a form of declarative programming. You tell the computer what you want done by calling a method or function.
 
 JavaScript offers many predefined methods that handle common tasks so you don't need to write out how the computer should perform them. For example, instead of using the for loop mentioned above, you could call the map method which handles the details of iterating over an array. This helps to avoid semantic errors, like the "Off By One Errors" that were covered in the Debugging section.
-
+---EXAMPLE 3 (in regex.js file )
 Consider the scenario: you are browsing the web in your browser, and want to track the tabs you have opened. Let's try to model this using some simple object-oriented code.
 
 A Window object is made up of tabs, and you usually have more than one Window open. The titles of each open site in each Window object is held in an array. After working in the browser (opening new tabs, merging windows, and closing tabs), you want to print the tabs that are still open. Closed tabs are removed from the array and new tabs (for simplicity) get added to the end of it.
 
 The code editor shows an implementation of this functionality with functions for tabOpen(), tabClose(), and join(). The array tabs is part of the Window object that stores the name of the open pages.
+---SOLUTION 3 (in regex.js file )
+in the solution slice() method is used in place of splice() becuase the splice method takes an imperative approach by mutating the original array thereby causing a bug in our code, unlike the slice method which extracts the arrays and leaves the parent array untouched.
 
 ------Avoid Mutations and Side Effects Using Functional Programming------
 If you haven't already figured it out, the issue in the previous challenge was with the splice call in the tabClose() function. Unfortunately, splice changes the original array it is called on, so the second call to it used a modified array, and gave unexpected results.
@@ -59,6 +61,7 @@ The previous example didn't have any complicated operations but the splice metho
 Recall that in functional programming, changing or altering things is called mutation, and the outcome is called a side effect. A function, ideally, should be a pure function, meaning that it does not cause any side effects.
 
 Let's try to master this discipline and not alter any variable or object in our code.
+---EXAMPLE 4 (in regex.js file ): Fill in the code for the function incrementer so it returns the value of the global variable fixedValue increased by one.
 
 ------Pass Arguments to Avoid External Dependence in a Function------
 The last challenge was a step closer to functional programming principles, but there is still something missing.
@@ -72,3 +75,6 @@ There are several good consequences from this principle. The function is easier 
 This can give you more confidence when you alter, remove, or add new code. You would know what you can or cannot change and you can see where the potential traps are.
 
 Finally, the function would always produce the same output for the same set of inputs, no matter what part of the code executes it.
+---EXAMPLE 5 (in regex.js file ): Write the incrementer function so it takes an argument, and then returns a result after increasing the value by one.
+
+------Refactor Global Variables Out of Functions------
